@@ -1,24 +1,55 @@
+# Configuration for handling advisories
 [advisories]
+# Ignore specific advisories
 ignore = []
+
+# Define informational warnings
 informational_warnings = ["unmaintained"]
+
+# Set the severity threshold
 severity_threshold = "low"
 
+# Configuration for the database
 [database]
+# Path to the advisory database
 path = "~/.cargo/advisory-db"
+
+# URL of the advisory database
 url = "https://github.com/RustSec/advisory-db.git"
+
+# Whether to fetch the advisory database
 fetch = true
+
+# Whether to consider stale entries in the database
 stale = false
 
+# Configuration for output options
 [output]
-deny = ["unmaintained"] # exit on error if unmaintained dependencies are found
+# Deny unmaintained dependencies
+deny = ["unmaintained"]
+
+# Specify the output format
 format = "terminal"
+
+# Control verbosity
 quiet = false
+
+# Show dependency tree
 show_tree = true
 
+# Configuration for target system
 [target]
+# Target architecture
 arch = "x86_64"
+
+# Target operating system
 os = "linux"
 
+# Configuration for handling yanked packages
 [yanked]
+# Enable yanked package handling
 enabled = true
+
+# Update index after handling yanked packages
 update_index = true
+
